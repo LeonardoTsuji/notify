@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: "rabbitmq:management"
+    container_name: rabbitmq_notify
+    ports:
+      - "5672:5672" # Porta para o RabbitMQ
+      - "15672:15672" # Porta para a interface de gerenciamento
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_data:
+    driver: local

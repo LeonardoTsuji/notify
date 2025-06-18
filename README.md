@@ -1,6 +1,6 @@
 # Notify
 
-Um serviço de notificações que permite enviar mensagens através de diferentes canais como email, SMS e outros meios de comunicação.
+Um serviço de notificações que permite enviar mensagens através de diferentes canais como email, SMS e WhatsApp.
 
 ## 🚀 Tecnologias
 
@@ -24,7 +24,7 @@ Um serviço de notificações que permite enviar mensagens através de diferente
 1. Clone o repositório:
 
 ```bash
-git clone [URL_DO_REPOSITÓRIO]
+git clone https://github.com/LeonardoTsuji/notify.git
 cd notify
 ```
 
@@ -37,29 +37,36 @@ pnpm install
 3. Configure as variáveis de ambiente:
    Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
-```env
+````env
 # Configurações do servidor
 PORT=3000
 HOST=localhost
 
 # Configurações dos serviços de email
 SENDGRID_API_KEY=sua_chave_aqui
+SENDGRID_FROM=
 RESEND_API_KEY=sua_chave_aqui
+RESEND_FROM=
 MAILERSEND_API_KEY=sua_chave_aqui
+MAILERSEND_FROM=
 
 # Configurações do Twilio
 TWILIO_ACCOUNT_SID=seu_sid_aqui
 TWILIO_AUTH_TOKEN=seu_token_aqui
+TWILIO_PHONE_NUMBER=
 
 # Configurações do RabbitMQ
 RABBITMQ_URL=amqp://guest:guest@localhost:5672
-```
+QUEUE_NAME=nome_da_fila
+
+#Configurações do WhatsApp
+TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886```
 
 4. Inicie o RabbitMQ usando Docker Compose:
 
 ```bash
 docker-compose up -d
-```
+````
 
 ## 🚀 Executando o projeto
 
